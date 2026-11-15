@@ -1,15 +1,15 @@
 {
-  "index.html": {
-    "bytes": 6068,
-    "sha256": "be374775900358f0e378001233a9a13160ba77a90ec469a23133e8326fe61a50"
+  "API.md": {
+    "bytes": 3410,
+    "sha256": "e0373f086e37fae48d97b75908d28d155a597ff2cde9eb24ee928e3939b91c59"
   },
-  "style.css": {
-    "bytes": 8204,
-    "sha256": "a2f6bebf70fc5059cf4b7ca39a4a0b8fef9b422e1bf1bcc29751d56af4a20d34"
+  "README.md": {
+    "bytes": 3871,
+    "sha256": "1241c034777ed64f13f9f155520ac4f06e8dbb567f11bdfb1195c0cea57749b9"
   },
   "app.mjs": {
-    "bytes": 12378,
-    "sha256": "6e923030a8ed3051787f920abd90d0a95f49d27e59786561fcaf029f44469482"
+    "bytes": 12773,
+    "sha256": "5ee437fd6f17ce0da5fa4f0d40bf44f8d5e8c8ee39d738856c281a52b7adfe02"
   },
   "core.mjs": {
     "bytes": 5906,
@@ -19,12 +19,16 @@
     "bytes": 7483,
     "sha256": "92ed27efbccac7a409d3f0b594e1e3e0afcd3175548aca55bb0653ef61ecba9c"
   },
-  "README.md": {
-    "bytes": 3509,
-    "sha256": "8d1d9e5da39da9aa4bf36a03379f256bd744b17aecc8bdcacbbc0e41fbe01a9e"
+  "index.html": {
+    "bytes": 6068,
+    "sha256": "be374775900358f0e378001233a9a13160ba77a90ec469a23133e8326fe61a50"
   },
-  "API.md": {
-    "bytes": 3410,
-    "sha256": "e0373f086e37fae48d97b75908d28d155a597ff2cde9eb24ee928e3939b91c59"
+  "startup.test.mjs": {
+    "bytes": 6863,
+    "sha256": "25f63dcb455b0eae3cefa263ab398878b4cfbc946a710399022bcc75186aa5ef"
+  },
+  "style.css": {
+    "bytes": 8204,
+    "sha256": "a2f6bebf70fc5059cf4b7ca39a4a0b8fef9b422e1bf1bcc29751d56af4a20d34"
   }
 }

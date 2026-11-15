@@ -72,6 +72,7 @@ export function parseTableMarkup(source, Parser = globalThis.DOMParser) {
   return {caption, rows};
 }
 
+let startupReady = false;
 function initialize(core) {
   const $ = id => document.getElementById(id);
   const source = $('source'), mode = $('mode'), status = $('status');
@@ -159,13 +160,13 @@ function initialize(core) {
     setTimeout(() => URL.revokeObjectURL(url),1000);
     say(`Downloaded ${kind === 'html' ? 'the supported corrected table' : 'the change receipt'}. Review it in context; this is not an accessibility certification.`);
   }
-  source.value = WORKSHOP;
-  $('preview').disabled = false;
-  say('Ready. Preview the synthetic example, or paste your own supported table.');
-  source.addEventListener('input',() => clear('Input changed. Preview again to create a fresh receipt.'));
-  mode.addEventListener('change',() => clear('Proposed correction changed. Preview again before exporting.'));
-  $('preview').addEventListener('click',preview);
-  $('undo').addEventListener('click',() => {
+  const bind = (target, type, handler) => target.addEventListener(type, event => {
+    if (startupReady) handler(event);
+  });
+  bind(source, 'input',() => clear('Input changed. Preview again to create a fresh receipt.'));
+  bind(mode, 'change',() => clear('Proposed correction changed. Preview again before exporting.'));
+  bind($('preview'), 'click',preview);
+  bind($('undo'), 'click',() => {
     if (!active) return;
     const baseline = active.before;
     active = null;
@@ -180,13 +181,23 @@ function initialize(core) {
     say('Preview undone. Both tables now show the exact original structure. Your input is unchanged. Preview again to redo.');
     $('preview').focus();
   });
-  $('example').addEventListener('click',() => {source.value = WORKSHOP;mode.value='add';clear('Synthetic workshop loaded. Preview to compare the proposed row-header correction.');});
-  $('refused').addEventListener('click',() => {source.value=MERGED;mode.value='add';clear('Merged-header example loaded. Preview to see why this structure is refused.');});
-  $('html-download').addEventListener('click',() => download('html'));
-  $('receipt-download').addEventListener('click',() => download('json'));
+  bind($('example'), 'click',() => {source.value = WORKSHOP;mode.value='add';clear('Synthetic workshop loaded. Preview to compare the proposed row-header correction.');});
+  bind($('refused'), 'click',() => {source.value=MERGED;mode.value='add';clear('Merged-header example loaded. Preview to see why this structure is refused.');});
+  bind($('html-download'), 'click',() => download('html'));
+  bind($('receipt-download'), 'click',() => download('json'));
+  // Do not overwrite text entered while the core was loading.
+  if (!source.value) source.value = WORKSHOP;
+  say('Ready. Preview the synthetic example, or paste your own supported table.');
+  $('preview').disabled = false;
+  startupReady = true;
 }
 if (typeof document !== 'undefined') {
   import('./core.mjs').then(initialize).catch(() => {
+    startupReady = false;
+    for (const id of ['preview','undo','example','refused','html-download','receipt-download']) {
+      const control = document.getElementById(id);
+      if (control) control.disabled = true;
+    }
     const status = document.getElementById('status');
     status.textContent = 'The local comparison engine could not load. Reload to try again. No preview or export is available; your input has not been sent anywhere.';
     status.className = 'error';

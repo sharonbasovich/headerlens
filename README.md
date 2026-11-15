@@ -28,7 +28,7 @@ Source implementation has passed 17 producer tests and an independent 638-case c
 
 ## Run and test
 
-Serve this directory with a static HTTP server and open index.html. No build step or dependencies are required. Run `node --test core.test.mjs` for the core suite. The import format deliberately requires well-formed closed tags, quoted attributes and XML-compatible text escapes. HTML named entities such as `&nbsp;` are not supported; use numeric character references instead.
+Serve this directory with a static HTTP server and open index.html. No build step or dependencies are required. Run `node --test core.test.mjs` for the core suite. Run `node --experimental-vm-modules --test startup.test.mjs` for startup fault-injection and successful-handler flow checks. These use a test-only DOM/parser stand-in and do not establish native browser, network-failure or assistive-technology acceptance. Startup now preserves nonempty loading-time input and leaves actions unavailable if initialization fails. The import format deliberately requires well-formed closed tags, quoted attributes and XML-compatible text escapes. HTML named entities such as `&nbsp;` are not supported; use numeric character references instead.
 
 ## Prior-art references
 
