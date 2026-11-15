@@ -1,0 +1,30 @@
+{
+  "index.html": {
+    "bytes": 6068,
+    "sha256": "be374775900358f0e378001233a9a13160ba77a90ec469a23133e8326fe61a50"
+  },
+  "style.css": {
+    "bytes": 8204,
+    "sha256": "a2f6bebf70fc5059cf4b7ca39a4a0b8fef9b422e1bf1bcc29751d56af4a20d34"
+  },
+  "app.mjs": {
+    "bytes": 12378,
+    "sha256": "6e923030a8ed3051787f920abd90d0a95f49d27e59786561fcaf029f44469482"
+  },
+  "core.mjs": {
+    "bytes": 5906,
+    "sha256": "d57062744d2f2a9a69f5163fe369d9224b99bb7de4316f24da31efb76b466b19"
+  },
+  "core.test.mjs": {
+    "bytes": 7483,
+    "sha256": "92ed27efbccac7a409d3f0b594e1e3e0afcd3175548aca55bb0653ef61ecba9c"
+  },
+  "README.md": {
+    "bytes": 3149,
+    "sha256": "3d9acfdae8c26271476591c6d0ca686d1c67c70dc10f0b01803d24758b70daf5"
+  },
+  "API.md": {
+    "bytes": 3410,
+    "sha256": "e0373f086e37fae48d97b75908d28d155a597ff2cde9eb24ee928e3939b91c59"
+  }
+}
