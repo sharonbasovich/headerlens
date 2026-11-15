@@ -2,6 +2,8 @@
 
 A small authoring aid for comparing explicit header context before and after a row-header correction in a simple HTML table.
 
+**[Try the live demo](https://sharonbasovich.github.io/headerlens/)**. The synthetic workshop is ready to use: select **Preview correction**, compare the 4 data-cell context changes and 2 label-role changes while all 9 cell texts stay intact, then use **Undo preview** or download a correction receipt. No account or build step is needed for the hosted demo.
+
 ## Why this exists
 
 Editing table headers and inspecting their associations are already supported by established tools. HeaderLens focuses on a narrower task: an understandable, reversible change receipt that separates changed cell roles from changed context for retained data cells, while checking that cell text and order are preserved. This is a workflow hypothesis, not a claim of unique technology or measured user benefit.
