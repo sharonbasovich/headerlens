@@ -153,7 +153,9 @@ function initialize(core) {
   function download(kind) {
     if (!active) return;
     const content = kind === 'html' ? active.html : active.json;
-    const blob = new Blob([content],{type:kind === 'html' ? 'text/html;charset=utf-8' : 'application/json;charset=utf-8'});
+    // The downloaded file has no HTTP Content-Type. A BOM preserves UTF-8
+    // when this table fragment is opened on its own, without changing the core export.
+    const blob = new Blob(kind === 'html' ? ['\uFEFF', content] : [content],{type:kind === 'html' ? 'text/html;charset=utf-8' : 'application/json;charset=utf-8'});
     const url = URL.createObjectURL(blob), link = element('a');
     link.href = url; link.download = kind === 'html' ? 'headerlens-corrected-table.html' : 'headerlens-change-receipt.json';
     document.body.append(link); link.click(); link.remove();

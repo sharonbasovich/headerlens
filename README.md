@@ -16,7 +16,7 @@ Rectangular text-only tables with one explicit top column-header row and optiona
 
 ## Privacy and safety
 
-The static app has no account, analytics, server storage or network submission. Imported table text is processed locally and rendered as text rather than executable markup. Export is an author-reviewed proposal, not an automated compliance verdict. Keep a copy of your original document.
+The static app has no account, analytics, server storage or network submission. Imported table text is processed locally and rendered as text rather than executable markup. Export is an author-reviewed proposal, not an automated compliance verdict. Keep a copy of your original document. Downloaded table HTML includes a UTF-8 byte-order mark so non-ASCII text has an explicit encoding when the file is opened on its own. The core HTML fragment and JSON receipt formats are unchanged.
 
 ## Development provenance
 

@@ -4,12 +4,12 @@
     "sha256": "e0373f086e37fae48d97b75908d28d155a597ff2cde9eb24ee928e3939b91c59"
   },
   "README.md": {
-    "bytes": 3871,
-    "sha256": "1241c034777ed64f13f9f155520ac4f06e8dbb567f11bdfb1195c0cea57749b9"
+    "bytes": 4068,
+    "sha256": "6b8778303b7b69b7b97e0fc5253158d2dd1a2b224646f2bf4c208bd7a38d2f36"
   },
   "app.mjs": {
-    "bytes": 12773,
-    "sha256": "5ee437fd6f17ce0da5fa4f0d40bf44f8d5e8c8ee39d738856c281a52b7adfe02"
+    "bytes": 12976,
+    "sha256": "b637ba1b1cfb907e0e92735f1ecf70091bf95d66b24566773dc5d20e1683f379"
   },
   "core.mjs": {
     "bytes": 5906,
@@ -24,8 +24,8 @@
     "sha256": "be374775900358f0e378001233a9a13160ba77a90ec469a23133e8326fe61a50"
   },
   "startup.test.mjs": {
-    "bytes": 6863,
-    "sha256": "25f63dcb455b0eae3cefa263ab398878b4cfbc946a710399022bcc75186aa5ef"
+    "bytes": 8162,
+    "sha256": "84a4cc6a97f621f08d4703a5b254ac0442de8fee0e83d8c244fcf60ac8443180"
   },
   "style.css": {
     "bytes": 8204,
